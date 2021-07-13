@@ -1860,6 +1860,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {};
@@ -19450,7 +19453,14 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "content-right" })
+      _c("div", { staticClass: "content-right" }, [
+        _c("div", { staticClass: "task-list" }, [
+          _c("p", [
+            _c("span", { staticClass: "task-span" }, [_vm._v("#")]),
+            _vm._v("Task")
+          ])
+        ])
+      ])
     ])
   }
 ]

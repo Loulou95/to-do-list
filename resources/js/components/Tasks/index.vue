@@ -8,6 +8,9 @@
 
         </div>
         <div class="content-right">
+            <div class="task-list">
+                <p><span class="task-span">#</span>Task</p>
+            </div>
 
         </div>
     </div>

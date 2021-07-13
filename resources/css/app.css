@@ -41,3 +41,11 @@ body {
     border: 1px solid #2c528c;
     color: white;
 }
+
+.task-list {
+    padding: 2rem;
+}
+
+.task-span {
+    margin-right: 2rem;
+}

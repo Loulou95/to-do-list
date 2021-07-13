@@ -42,3 +42,11 @@ body {
     color: white;
 }
 
+.task-list {
+    padding: 2rem;
+}
+
+.task-span {
+    margin-right: 2rem;
+}
+
