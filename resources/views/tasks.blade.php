@@ -13,18 +13,11 @@
 <body>
 
 <div class="main-content">
-    <div class="mlp-logo">
+    <div class="mlp-logo" id="app">
         <img src="/assets/logo.png">
+        <v-task></v-task>
     </div>
-    <div class="content">
-        <div class="content-left">
-
-        </div>
-        <div class="content-right">
-
-        </div>
-    </div>
-
+    <script src="{{ asset('/js/app.js') }}"></script>
 </div>
 
 </body>

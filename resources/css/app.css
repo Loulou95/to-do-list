@@ -1,5 +1,7 @@
 body {
-    background-color: #EBECF0;
+    background-color: #f6f7f8;
+    max-width: 1444px;
+    margin: 0 auto;
 }
 
 .main-content {
@@ -10,4 +12,32 @@ body {
 
 .content {
     display: flex;
+    margin-top: 8rem;
+}
+
+.content-left {
+    width: 40%;
+}
+
+.content-right {
+    width: 60%;
+    background-color: white;
+    margin-left:2rem;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+}
+
+
+.input-field, .task-btn {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #f1f1f1;
+}
+
+.task-btn {
+    margin-top: 1rem;
+    background-color: #2c528c;
+    border: 1px solid #2c528c;
+    color: white;
 }
