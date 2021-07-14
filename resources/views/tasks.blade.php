@@ -20,7 +20,9 @@
             <v-task></v-task>
             <div class="content-right">
                 <div class="task-list">
-                    <p><span class="task-span">#</span>Task</p>
+                    <div class="task-title">
+                        <p><span class="task-span">#</span>Task</p>
+                    </div>
                     @if (isset($tasks))
                         @foreach($tasks as $task)
                             <div class="">
@@ -56,6 +58,9 @@
                 </div>
 
             </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2020All Rights Reserved</p>
         </div>
     </div>
     <script src="{{ asset('/js/app.js') }}"></script>

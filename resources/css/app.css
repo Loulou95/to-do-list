@@ -1,6 +1,7 @@
 body {
     background-color: #f6f7f8;
     max-width: 1444px;
+    color: #555;
     margin: 0 auto;
 }
 
@@ -55,7 +56,18 @@ body {
 
 .task-item {
     justify-content: space-between;
+    border-top: 1px solid #f1f1f1;
+    padding: 5px;
 }
+
+.task-title {
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: bold;
+}
+
+/*.task-title p {*/
+/*    font: bold;*/
+/*}*/
 
 .complete {
     text-decoration: line-through;
@@ -79,4 +91,27 @@ body {
 
 .fa-times {
     padding: 1px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 10rem;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 768px){
+    .content-right, .content-left, .main-content {
+        width: 100%;
+
+    }
+
+    .content-right {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .content {
+        display: block;
+    }
+
 }
