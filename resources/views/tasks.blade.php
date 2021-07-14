@@ -23,42 +23,42 @@
                     <div class="task-title">
                         <p><span class="task-span">#</span>Task</p>
                     </div>
-                    @if (isset($tasks))
-                        @foreach($tasks as $task)
-                            <div class="">
-                                <div class="task-item">
-                                    @if($task->status === 1)
-                                        <p class="complete">{{$task->name}}</p>
-                                    @else
-                                        <p class="">{{$task->name}}</p>
-                                    @endif
-                                    <div class="task-action">
-                                        <div class="">
-                                            <form action="/update-task/{{ $task->id }}" method="POST">
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="complete-icon">
-                                                    <i class="fa fa-check"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <div class="">
-                                            <form action="/delete-task/{{ $task->id }}" method="POST">
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="delete-icon">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
-                                            </form>
+                        @if (isset($tasks))
+                            @foreach($tasks as $task)
+                                <div class="">
+                                    <div class="task-item">
+                                        @if($task->status === 1)
+                                            <p class="complete">
+                                                {{$task->name}}
+                                            </p>
+                                        @else
+                                            <p class="">{{$task->name}}</p>
+                                        @endif
+                                        <div class="task-action">
+                                            <div class="">
+                                                <form action="/update-task/{{ $task->id }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="complete-icon">
+                                                        <i class="fa fa-check"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="">
+                                                <form action="/delete-task/{{ $task->id }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <button type="submit" class="delete-icon">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                            </div>
-                        @endforeach
-                    @endif
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
-
             </div>
-        </div>
         <div class="copyright">
             <p>Copyright © 2020All Rights Reserved</p>
         </div>
