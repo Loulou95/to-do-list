@@ -120,26 +120,9 @@ body {
 
 }
 
-ol {
-    list-style-type:number inside;
-    margin-left:50px;
-}
-.alt {
-    background-color:#ccc;
-    position:relative;
-}
-.alt:before {
-    position:absolute;
-    display: inline-block;
-    content:"";
-    background-color: rgba(0,0,0,.2);
-    left: -30px;
-    height: 100%;
-    width: 30px;
-}
-
 .message {
     text-align: center;
     padding: 2rem;
 }
+
 
