@@ -24,7 +24,11 @@
                         @foreach($tasks as $task)
                             <div class="">
                                 <div class="task-item">
-                                    <p>{{$task->name}}</p>
+                                    @if($task->status === 1)
+                                        <p class="complete">{{$task->name}}</p>
+                                    @else
+                                        <p class="">{{$task->name}}</p>
+                                    @endif
                                     <div class="task-action">
                                         <div class="">
                                             <form action="/delete-task/{{ $task->id }}" method="POST">
@@ -35,7 +39,7 @@
                                             </form>
                                         </div>
                                         <div class="">
-                                            <form action="/tasks/{{ $task->id }}" method="POST">
+                                            <form action="/update-task/{{ $task->id }}" method="POST">
                                                 {{ csrf_field() }}
                                                 <button type="submit">
                                                     Update

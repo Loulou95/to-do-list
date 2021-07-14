@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Task'], function () {
     Route::post('/delete-task/{id}', 'TaskController@delete');
+    Route::post('/update-task/{id}', 'TaskController@update');
     Route::get('/', 'TaskController@index');
     Route::post('store', 'TaskController@store');
 });

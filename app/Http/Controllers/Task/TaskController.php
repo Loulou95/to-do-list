@@ -25,7 +25,8 @@ class TaskController extends Controller
         return redirect('/');
     }
 
-    public function update() {
-
+    public function update(Request $request, $id) {
+        $task = Task::where('id', $id)->update((array('status' => '1')));
+        return redirect('/');
     }
 }
