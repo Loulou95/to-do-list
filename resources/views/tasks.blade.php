@@ -34,24 +34,26 @@
                                         @else
                                             <p class="">{{$task->name}}</p>
                                         @endif
-                                        <div class="task-action">
-                                            <div class="">
-                                                <form action="/update-task/{{ $task->id }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="complete-icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </button>
-                                                </form>
+                                        @if($task->status === 0)
+                                            <div class="task-action">
+                                                <div class="">
+                                                    <form action="/update-task/{{ $task->id }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="complete-icon">
+                                                            <i class="fa fa-check"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                                <div class="">
+                                                    <form action="/delete-task/{{ $task->id }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="delete-icon">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                            <div class="">
-                                                <form action="/delete-task/{{ $task->id }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="delete-icon">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
