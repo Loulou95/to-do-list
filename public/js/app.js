@@ -1854,39 +1854,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      tasks: [],
       newTask: {
         name: ''
       }
     };
   },
-  created: function created() {
-    this.getTasks();
-  },
   methods: {
     addTask: function addTask() {
-      axios.post("store", this.newTask).then(function (response) {
-        console.log('task created');
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getTasks: function getTasks() {
       var _this = this;
 
-      axios.get("tasks").then(function (response) {
-        _this.tasks = response.data.tasks;
+      axios.post("store", this.newTask).then(function (response) {
+        _this.newTask.name = "";
+        console.log('task created');
       })["catch"](function (error) {
         console.log(error.response);
       });
@@ -19459,77 +19441,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content" }, [
-    _c("div", { staticClass: "content-left" }, [
-      _c(
-        "form",
-        {
-          attrs: { method: "post" },
+  return _c("div", { staticClass: "content-left" }, [
+    _c(
+      "form",
+      {
+        attrs: { method: "post" },
+        on: {
+          sumit: function($event) {
+            $event.preventDefault()
+            return _vm.addTask.apply(null, arguments)
+          }
+        }
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.newTask.name,
+              expression: "newTask.name"
+            }
+          ],
+          staticClass: "input-field",
+          attrs: { type: "text", placeholder: "insert task name" },
+          domProps: { value: _vm.newTask.name },
           on: {
-            sumit: function($event) {
-              $event.preventDefault()
-              return _vm.addTask.apply(null, arguments)
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.newTask, "name", $event.target.value)
             }
           }
-        },
-        [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.newTask.name,
-                expression: "newTask.name"
-              }
-            ],
-            staticClass: "input-field",
-            attrs: { type: "text", placeholder: "insert task name" },
-            domProps: { value: _vm.newTask.name },
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "task-btn",
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.newTask, "name", $event.target.value)
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.addTask.apply(null, arguments)
               }
             }
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "task-btn",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.addTask.apply(null, arguments)
-                }
-              }
-            },
-            [_vm._v("Add")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(0)
+          },
+          [_vm._v("Add")]
+        )
+      ]
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-right" }, [
-      _c("div", { staticClass: "task-list" }, [
-        _c("p", [
-          _c("span", { staticClass: "task-span" }, [_vm._v("#")]),
-          _vm._v("Task")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

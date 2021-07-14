@@ -49,4 +49,12 @@ body {
 .task-span {
     margin-right: 2rem;
 }
+.task-action, .task-item {
+    display: flex;
+}
+
+.task-item {
+    justify-content: space-between;
+}
+
 

@@ -15,7 +15,43 @@
 <div class="main-content">
     <div class="mlp-logo" id="app">
         <img src="/assets/logo.png">
-        <v-task></v-task>
+        <div class="content">
+            <v-task></v-task>
+            <div class="content-right">
+                <div class="task-list">
+                    <p><span class="task-span">#</span>Task</p>
+                    @if (isset($tasks))
+                        @foreach($tasks as $task)
+                            <div class="">
+                                <div class="task-item">
+                                    <p>{{$task->name}}</p>
+                                    <div class="task-action">
+                                        <div class="">
+                                            <form action="/delete-task/{{ $task->id }}" method="POST">
+                                                {{ csrf_field() }}
+                                                <button type="submit">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="">
+                                            <form action="/tasks/{{ $task->id }}" method="POST">
+                                                {{ csrf_field() }}
+                                                <button type="submit">
+                                                    Update
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+            </div>
+        </div>
     </div>
     <script src="{{ asset('/js/app.js') }}"></script>
 </div>

@@ -13,14 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('tasks');
-});
 
 Route::group(['namespace' => 'Task'], function () {
+    Route::post('/delete-task/{id}', 'TaskController@delete');
+    Route::get('/', 'TaskController@index');
     Route::post('store', 'TaskController@store');
-    Route::get('tasks', 'TaskController@tasks');
-    Route::delete('delete-tasks/{id}', 'TaskController@delete');
 });
 
 
