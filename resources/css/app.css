@@ -137,3 +137,8 @@ ol {
     height: 100%;
     width: 30px;
 }
+
+.message {
+    text-align: center;
+    padding: 2rem;
+}

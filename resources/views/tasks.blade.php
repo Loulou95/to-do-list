@@ -23,7 +23,7 @@
                     <div class="task-title">
                         <p><span class="task-span">#</span>Task</p>
                     </div>
-                        @if (isset($tasks))
+                        @if (!$tasks->isEmpty())
                             @foreach($tasks as $task)
                                 <div class="">
                                     <div class="task-item">
@@ -57,6 +57,10 @@
                                     </div>
                                 </div>
                             @endforeach
+                        @else
+                            <div class="message">
+                                <p>No task(s) available</p>
+                            </div>
                         @endif
                     </div>
                 </div>
