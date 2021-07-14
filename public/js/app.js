@@ -1868,6 +1868,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("store", this.newTask).then(function (response) {
         _this.newTask.name = "";
+        window.location.href = '/';
         console.log('task created');
       })["catch"](function (error) {
         console.log(error.response);

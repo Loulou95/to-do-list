@@ -62,3 +62,22 @@ body {
 }
 
 
+.delete-icon {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+.complete-icon {
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.fa-times {
+    padding: 1px;
+}
+

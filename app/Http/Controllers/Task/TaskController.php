@@ -12,7 +12,7 @@ class TaskController extends Controller
 {
     public function index() {
         $tasks = Task::all();
-        return view('tasks', ["tasks"=>$tasks]);
+        return view('tasks', compact("tasks"));
     }
     public function store(Request $request) {
         Task::create(['name' => $request['name']]);

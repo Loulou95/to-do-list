@@ -21,6 +21,7 @@
             addTask() {
                 axios.post("store", this.newTask).then(response => {
                     this.newTask.name = "";
+                    window.location.href = '/';
                    console.log('task created')
                 }).catch(error => {
                     console.log(error.response)
